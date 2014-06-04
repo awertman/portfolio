@@ -1,0 +1,109 @@
+<!doctype html>
+
+<html ng-app="profile">
+<head>
+  <meta charset="utf-8">
+  <title>Aaron Wertman</title>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resourc/e.min.js"></script> -->
+  <script type="text/javascript" src="javascripts/lib/angular.min.js"></script>
+
+  <script type="text/javascript" src="javascripts/maincontroller.js"></script>
+  <script type="text/javascript" src="javascripts/models/portfolio.js"></script>
+  <script type="text/javascript" src="javascripts/filters/header_filter.js"></script>
+  <script type="text/javascript" src="javascripts/filters/search_filter.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/grid.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-controller="mainController" class="container clearfix">
+
+  <nav class="grid_10 {{layout}}" ng-click="$event.preventDefault()">
+    <section id="info" class="grid_5">
+      <h1> Aaron Wertman </h1>
+      <h4> Data Scientist | Web Developer </h4>
+    </section>
+    <section id="page-links" class="grid_5">
+      <ul >
+        <li> <a href="#" class="brackets about" ng-class="{active: layout == 'about'}" ng-click="layout = 'about'">about</a></li>
+        <li> <a href="#" class="brackets resume" ng-class="{active: layout == 'resume'}" ng-click="layout = 'resume'">resume</a></li>
+        <li> <a href="#" class="brackets portfolio" ng-class="{active: layout == 'portfolio'}" ng-click="layout = 'portfolio'">portfolio</a></li>
+        <li> <a href="#" class="brackets contact" ng-class="{active: layout == 'contact'}" ng-click="layout = 'contact'">contact</a></li>
+      </ul>
+    </section>
+    <section id="break" class="grid_10">
+      <hr>
+    </section>
+  </nav>
+
+
+
+  <div id="layout" class="grid_10">
+    <div id="header-pane">
+      <h2> {{ layout | replaceContent}} <h2>
+    </div>
+    <div id="header-line">
+      <h3> {{layout}} </h3>
+      <hr>
+    </div>
+
+    <div id="content" class="grid_10">
+
+      <div ng-show="layout == 'about'" class="about">
+        <img src="images/headshot.jpg" class="grid_2">
+        I am a web developer and data scientist, fascinated with the possibilities of technology and information to change the way we understand the world and to make better decisions using quantitative metrics.
+      </div>
+
+      <div ng-show="layout == 'resume'" class="resume">
+
+      </div>
+
+      <div ng-show="layout == 'portfolio'" class="portfolio">
+        <div id="filter-bar" class="grid_10">
+          <form>
+            search by keyword:
+            <input type="text" class="filter-box" placeholder="search this portfolio" ng-model="searchString">
+          </form>
+        </div>
+        <hr>
+
+        <div ng-repeat="item in portfolioContent.collection | searchFor:searchString">
+          <div class="odd_{{$even}} grid_9 portfolio-item">
+            <div class="grid_7">
+              <ul>
+                <li> <h3> {{ item.title }} </h3></li>
+                <li> <span> About the App:</span> {{ item.description }} </li>
+                <li> <span> About the Technology:</span> {{ item.technology }} </li>
+                <li> See the code on  <a href="{{item.githubLink}}" target="_blank"> Github </a> </li>
+                <li ng-if="item.liveLink"> See the live project at  <a href="{{item.liveLink}}" target="_blank"> {{item.title}} </a> </li>
+              </ul>
+            </div>
+            <div class="grid_2">
+              <img src="{{item.imageLink}}" width="90%">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="no-match" ng-if="(portfolioContent.collection | searchFor:searchString) == 0"> Sorry.. no matches.</div>
+
+      <div ng-show="layout == 'contact'" class="contact">
+
+        <ul>
+          <li> Contact me on: <a class="brackets" href="http://www.linkedin.com/pub/aaron-wertman/14/554/594/" target="_blank"> LinkedIn </a> </li>
+          <li> Checkout my code on: <a class="brackets" href="https://github.com/awertman/" target="_blank"> Github </a> </li>
+        </ul>
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <footer class="grid_10">
+  </footer>
+
+</body>
+</html>
