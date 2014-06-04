@@ -1,0 +1,333 @@
+/*div {
+  box-shadow: 0 0 0 1px black;
+}*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+  color: #004964;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+
+
+/********************************************************** nav bar / header *****************/
+
+nav {
+  font-family: 'Open Sans', sans-serif;
+  position: fixed;
+  background-color: white;
+}
+
+h1, h4 {
+  font-weight: 300;
+  letter-spacing:2px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+
+#info {
+  margin-top: 11px;
+}
+
+#page-links {
+  margin-top: 50px;
+}
+
+nav.about .about,
+nav.resume .resume,
+nav.contact .contact,
+nav.portfolio .portfolio {
+    color: #004964;
+    border-bottom: 2px solid #004964;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+nav li {
+  list-style-type: none;
+  text-align: center;
+  float: left;
+  width: 25%;
+}
+
+nav .brackets {
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  transition: all .5s;
+}
+
+nav .brackets:hover {
+  cursor: pointer;
+}
+
+nav .brackets:after, nav .brackets:before {
+  transition: all .5s;
+}
+
+.brackets:before, .brackets:after {
+  color: transparent;
+  position: absolute;
+}
+
+.brackets:hover:before, .brackets:hover:after {
+  color: #004964;
+}
+
+.brackets:before {
+  content: "{";
+  left: -20px;
+}
+.brackets:hover:before {
+  left: -15px;
+}
+.brackets:after {
+  content: "}";
+  right: -20px;
+}
+.brackets:hover:after {
+  right: -15px;
+}
+
+#break {
+  margin-top: 16px;
+}
+
+
+/********************************************************** layout *****************/
+
+
+h2 {
+  font-weight: 300;
+  letter-spacing:2px;
+  font-size: 16px;
+  color: white;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+#header-pane {
+  height: 50px;
+  background-color: #004964;
+  margin: auto;
+  padding-left: 5%;
+  padding-top: 20px;
+}
+
+#header-line h3 {
+  margin: 20px 0 5px 0;
+  margin-left: 5%;
+  color: #222222;
+}
+
+#layout {
+  margin-top: 98px;
+}
+
+
+#content {
+  color: #222222;
+}
+
+/********************************************************** about *****************/
+
+div .about {
+  margin: 0 5%;
+  line-height: 40px;
+  color: #222222;
+}
+
+div .about img {
+  padding-top: 15px;
+  padding-right: 5%;
+}
+
+/********************************************************** portfolio *****************/
+
+
+/***** filter bar *****/
+
+
+#filter-bar form {
+  font-size: 13px;
+  margin: 0 7.5%;
+  line-height: 40px;
+  color: #222222;
+}
+
+.filter-box {
+  margin: 0 2%;
+  width: 30%;
+  height: 20px;
+  text-align: center;
+}
+
+/***** filter bar *****/
+
+
+.portfolio-item {
+  padding: 0 10%;
+  height: 400px;
+}
+
+.odd_true {
+  background-color: #e0e9ec;
+}
+
+.portfolio-item {
+  padding-top: 20px;
+  letter-spacing: 2px;
+  font-size: 14px;
+  color: #222222;
+}
+
+.portfolio-item li {
+  line-height: 30px;
+  list-style-type: none;
+  padding-top: 17px;
+  color: #222222;
+  margin-right: 8%;
+}
+
+.portfolio-item h3 {
+  color: #222222;
+}
+
+.portfolio-item span {
+  color: #222222;
+  font-weight: bold;
+}
+
+.portfolio-item img {
+  margin-top: 15px;
+}
+
+#no-match {
+  color: #222222;
+  margin: 10%;
+
+}
+
+/********************************************************** contact *****************/
+
+div .contact {
+  margin: 2% 5%;
+}
+
+div .contact li {
+  line-height: 50px;
+  color: #222222;
+  list-style-type: none;
+}
+
+/********************************************************** footer *****************/
+
+footer {
+/*  height: 70px;
+  background-color: #004964;
+  margin: auto;
+  padding-left: 5%;*/
+  /*padding-top: 20px;*/
+}
+
+footer p {
+  /*color: white;*/
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 700px) {
+  /*.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10 {width:100%; }*/
+  /*.photobox  {width:49%; height: 24em;}*/
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 14px;
+  }
+
+  #header-pane {
+    height: 40px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  #page-links {
+    margin-top: 4px;
+    width: 30%;
+  }
+
+  #info {
+    width: 70%;
+    margin-bottom: 0px;
+  }
+
+  nav li {
+    width: 80%;
+    text-align: center;
+    list-style-type: none;
+  }
+
+  nav .brackets {
+    font-size: 15px;
+  }
+
+  .portfolio-item {
+    font-size: 14px;
+  }
+
+  .portfolio-item li {
+    line-height: 20px;
+  }
+
+  .filter-box {
+    width: 40%;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 12px;
+  }
+  nav .brackets {
+    font-size: 11px;
+  }
+
+  .portfolio-item {
+    font-size: 12px;
+  }
+
+  .portfolio-item li {
+    line-height: 20px;
+  }
+
+  .filter-box {
+    width: 50%;
+  }
+
+}
