@@ -55,7 +55,7 @@ nav.portfolio .portfolio {
 
 nav li {
   list-style-type: none;
-  text-align: center;
+  text-align: left;
   float: left;
   width: 25%;
 }
@@ -213,7 +213,7 @@ div .resume {
 
 
 .portfolio-item {
-  padding: 0 10%;
+  padding-left: 10%;
   height: 400px;
 }
 
@@ -259,6 +259,7 @@ div .resume {
 
 div .contact {
   margin: 2% 5%;
+  padding: 0px;
 }
 
 div .contact li {
@@ -283,6 +284,11 @@ footer p {
 
 
 
+
+/********************************************************** media queries *****************/
+
+
+
 @media (max-width: 900px) {
 
   .portfolio-item li {
@@ -290,8 +296,6 @@ footer p {
   }
 
 }
-
-
 
 
 
@@ -313,20 +317,12 @@ footer p {
     font-size: 16px;
   }
 
+  .grid_5 {
+    width: 100%;
+  }
+
   #page-links {
-    margin-top: 4px;
-    width: 30%;
-  }
-
-  #info {
-    width: 70%;
-    margin-bottom: 0px;
-  }
-
-  nav li {
-    width: 80%;
-    text-align: center;
-    list-style-type: none;
+    margin-top: 9px;
   }
 
   nav .brackets {
@@ -356,16 +352,9 @@ footer p {
   h4 {
     font-size: 12px;
   }
-  nav .brackets {
-    font-size: 11px;
-  }
 
   .portfolio-item {
     font-size: 11px;
-  }
-
-  .portfolio-item li {
-    line-height: 19px;
   }
 
   .filter-box {
@@ -373,3 +362,21 @@ footer p {
   }
 
 }
+
+
+@media (max-width: 400px) {
+
+  .grid_7 {
+    width: 78%;
+  }
+
+  .portfolio-item {
+    font-size: 11px;
+  }
+
+  .portfolio-item li {
+    line-height: 17px;
+  }
+
+}
+
