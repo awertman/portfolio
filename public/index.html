@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <title>Aaron Wertman</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resourc/e.min.js"></script> -->
   <script type="text/javascript" src="javascripts/lib/angular.min.js"></script>
 
   <script type="text/javascript" src="javascripts/maincontroller.js"></script>
@@ -54,10 +54,77 @@
 
       <div ng-show="layout == 'about'" class="about">
         <img src="images/headshot.jpg" class="grid_2">
-        I am a web developer and data scientist, fascinated with the possibilities of technology and information to change the way we understand the world and to make better decisions using quantitative metrics.
+        <p> I am a web developer and data scientist, fascinated with the possibilities of technology and information to change the way we understand the world and to make better decisions using quantitative metrics. </p>
+        <br>
+        <p> I began my career in management consulting after finishing undergrad with degrees in Philosophy and Operations Management, focusing on statics and optimization. While at Deloitte my work experiences revolved around projects with heavy data analytics, using trends or inconsistencies in data to identify areas of opportunity for growth or efficiency improvement. I became fascinated with the world of data science and began exploring programming. I left a great position at Deloitte in order to pursue my interests further and learn programming through Dev Bootcamp. </p>
       </div>
 
       <div ng-show="layout == 'resume'" class="resume">
+
+        <br>
+        <p class="section-header"> SKILLS </p>
+        <hr>
+        <p class="sub-header"> Programming </p>
+        <ul class="line-items">
+          <li> Javascript, Ruby, SQL, HTML/CSS </li>
+          <li> Node, Angular, Ember, Rails, ActiveRecord, testing (Rspec, Jasmine), git workflow </li>
+
+        </ul>
+
+        <br>
+        <p class="section-header"> EDUCATION </p>
+        <hr>
+        <p class="section-header"> University of Maryland, College Park </p>
+        <p class="sub-header"> Robert H. Smith School of Business </p>
+        <p class="indent-header"> B.S. Operations Management </p>
+        <p class="sub-header"> College of Arts and Humanities </p>
+        <p class="indent-header"> B.A. Philosophy </p>
+        <br>
+        <p class="section-header"> Dev Bootcamp </p>
+        <p class="sub-header"> Web Development Program </p>
+        <ul class="line-items">
+          <li> Three month immersive programming course delving into concepts such as object orientation, design patterns, and agile development </li>
+          <li> Focused learning efforts on JavaScript design patterns and frameworks, leveraging Node, Ember, and Angular </li>
+          <li> Developed skills in Ruby, Rails, SQL, FireBase, Mongo, testing (Rspec and Jasmine), HTML/CSS, and git workflow  </li>
+        </ul>
+
+        <br>
+        <p class="section-header"> PROFESSIONAL EXPERIENCE </p>
+        <hr>
+        <p class="section-header"> Deloitte Consulting </p>
+        <p class="section-header"> Consultant | Strategy & Operations </p>
+        <p class="sub-header"> Project Experience </p>
+        <ul class="line-items">
+          <li> Initiated customer experience redesign after analyzing survey data to understand consumer sentiments and brand rating </li>
+          <li> Calculated statistically significant lead times for global shipments (six sigma) </li>
+          <li> Identified key customers through spending growth trends and total cost to serve </li>
+          <li> Evaluated manufacturing production quality and defect rates across product lines </li>
+          <li> Optimized product dimension specifications and explored alternative design options </li>
+          <li> Performed diagnostics of procurement spending, evaluating unit pricing and net costs </li>
+          <li> Assessed and optimized a North American freight transportation network </li>
+          <li> Reviewed, enhanced, and developed new measures of organizational risk appetite </li>
+        </ul>
+        <p class="sub-header"> Research </p>
+        <ul class="line-items">
+          <li> Analyzed trends in emerging markets through CXO surveys, assessing the most effective strategies companies are using to penetrate new markets and achieving sustainable growth</li>
+        </ul>
+
+        <br>
+        <p class="section-header"> COMMUNITY INVOLVEMENT </p>
+        <hr>
+        <p class="section-header"> BinDonated </p>
+        <p class="sub-header"> Nonprofit Volunteer </p>
+        <ul class="line-items">
+          <li> Volunteer for a nonprofit organization that makes donating more accessible to the public by hosting drop off points to collect clothes, books, and other supplies to give to homeless shelters and other nonprofits </li>
+          <li> Collaborated with a team of Northwestern students to identify revenue generating activities that would create sustainable operations </li>
+        </ul>
+
+        <p class="section-header"> KIPP Charter School </p>
+        <p class="sub-header"> Associated Board </p>
+        <ul class="line-items">
+          <li> Taught a monthly World History class for middle school students at a charter school </li>
+          <li> Planned and facilitated fundraising activities for the organization </li>
+        </ul>
 
       </div>
 
@@ -81,8 +148,8 @@
                 <li ng-if="item.liveLink"> See the live project at  <a href="{{item.liveLink}}" target="_blank"> {{item.title}} </a> </li>
               </ul>
             </div>
-            <div class="grid_2">
-              <img src="{{item.imageLink}}" width="90%">
+            <div class="grid_2 imageLink" ng-repeat="link in item.imageLink">
+              <img src="{{link}}" width="90%">
             </div>
           </div>
         </div>
