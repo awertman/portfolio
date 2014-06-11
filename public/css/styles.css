@@ -246,8 +246,13 @@ div .resume {
 }
 
 .portfolio-item img {
-  margin-top: 15px;
+  margin-top: 5px;
+  width: 70%;
 }
+
+/*.imageLink {
+  width: 20%;
+}*/
 
 #no-match {
   color: #222222;
@@ -295,6 +300,16 @@ footer p {
     line-height: 24px;
   }
 
+  .portfolio-item img {
+    width: 100%;
+  }
+
+  .portfolio-item img {
+    margin-top: 20px;
+  }
+
+
+
 }
 
 
@@ -302,16 +317,27 @@ footer p {
 
 @media (max-width: 700px) {
   h1 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   h2 {
     font-size: 14px;
   }
 
-  #header-pane {
-    height: 40px;
+
+  nav li {
+    text-align: center;
   }
+
+  #break {
+    margin-top: 10px;
+  }
+
+  #header-pane {
+    height: 36px;
+    padding-top: 25px;
+  }
+
 
   h4 {
     font-size: 16px;
@@ -322,7 +348,7 @@ footer p {
   }
 
   #page-links {
-    margin-top: 9px;
+    margin-top: 3px;
   }
 
   nav .brackets {
@@ -340,6 +366,14 @@ footer p {
   .filter-box {
     width: 40%;
   }
+
+  .portfolio-item img {
+    margin-top: 25px;
+  }
+
+
+
+
 
 }
 
@@ -361,6 +395,15 @@ footer p {
     width: 50%;
   }
 
+  #break {
+    margin-top: 15px;
+  }
+
+  #header-pane {
+    height: 30px;
+    padding-top: 10px;
+  }
+
 }
 
 
@@ -377,6 +420,7 @@ footer p {
   .portfolio-item li {
     line-height: 17px;
   }
+
 
 }
 

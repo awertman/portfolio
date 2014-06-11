@@ -24,7 +24,7 @@
   <nav class="grid_10 {{layout}}" ng-click="$event.preventDefault()">
     <section id="info" class="grid_5">
       <h1> Aaron Wertman </h1>
-      <h4> Data Scientist | Web Developer  </h4>
+      <h4> Data Scientist | Web Developer </h4>
     </section>
     <section id="page-links" class="grid_5">
       <ul >
@@ -85,7 +85,7 @@
         <ul class="line-items">
           <li> Three month immersive programming course delving into concepts such as object orientation, design patterns, and agile development </li>
           <li> Focused learning efforts on JavaScript design patterns and frameworks, leveraging Node, Ember, and Angular </li>
-          <li> Developed skills in Ruby, Rails, SQL, ActiveRecord, FireBase, Mongo, testing (Rspec and Jasmine), HTML/CSS, and git workflow  </li>
+          <li> Developed skills in Ruby, Rails, SQL, FireBase, Mongo, testing (Rspec and Jasmine), HTML/CSS, and git workflow  </li>
         </ul>
 
         <br>
@@ -148,8 +148,8 @@
                 <li ng-if="item.liveLink"> See the live project at  <a href="{{item.liveLink}}" target="_blank"> {{item.title}} </a> </li>
               </ul>
             </div>
-            <div class="grid_2">
-              <img src="{{item.imageLink}}" width="90%">
+            <div class="grid_2 imageLink" ng-repeat="link in item.imageLink">
+              <img src="{{link}}" width="90%">
             </div>
           </div>
         </div>

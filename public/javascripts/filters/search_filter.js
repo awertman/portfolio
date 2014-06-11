@@ -1,23 +1,23 @@
 app.filter('searchFor', function(){
-
   return function(data, searchString){
     if(!searchString){
       return data;
     }
     var result = [];
+    pattern = ""
+    filters = searchString.split(" ")
 
-    var pattern = "(" + searchString.toLowerCase().replace(" ", ")|(" ) + ")"
-    var regEx = new RegExp(  pattern , "g")
+    filters.forEach( function(filter) {
+      pattern += '(?=.*' + filter + ")"
+    })
 
+    var regEx = new RegExp(  pattern )
     for ( i in data ) {
-      if ( regEx.test( data[i].description.toLowerCase()) ) {
-        result.push(data[i])
-      } else if ( regEx.test( data[i].technology.toLowerCase()) ) {
+      content = data[i].description.toLowerCase() + data[i].technology.toLowerCase()
+      if ( content.match( regEx ) ) {
         result.push(data[i])
       }
     }
     return result;
   };
-
 });
-
