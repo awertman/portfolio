@@ -1,8 +1,8 @@
 app.factory('portfolioContent', function() {
-  searchItems = {
+  portfolioItems = {
     collection: PORTFOLIODATA
   }
-  return searchItems
+  return portfolioItems
 })
 
 
